@@ -17,16 +17,27 @@
 <script type="text/javascript">
 $(function () {
     $('select.styled').udselect();
+
+    // Change listener..
+    $('select.styled').change(function () {
+        $('.result').text($(this).val());
+    });
+    $('.result').text($('select.styled').val());
+
 });
 </script>
 
 </head>
 <body>
 
+<h1>UDSELECT</h1>
+
+<p><a href="https://github.com/peec/udselect">Documentation in git repo</a></p>
+
 
 <h2>Non styled:</h2>
 
-<select>
+<select style="width: 100%;">
 <option value="1">Car</option>
 <option value="2" selected>Bike</option>
 <option value="3">Boat</option>
@@ -42,6 +53,12 @@ $(function () {
 <option value="3">Boat</option>
 </select>
 </div>
+
+<h3>Change listener:</h3>
+
+<div class="result"></div>
+
+
 
 </body>
 </html>

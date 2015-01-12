@@ -77,7 +77,8 @@
             'z-index':'10',
             'line-height':'26px',
             'opacity':0,
-            '-khtml-appearance':'none'
+            '-khtml-appearance':'none',
+            '-webkit-appearance': 'menulist-button' // http://stackoverflow.com/questions/2547354/how-to-increase-the-height-of-the-select-box
         },
         /**
          * Default <span> CSS.
@@ -93,7 +94,7 @@
         },
 
         spanElementCallback: function (title) {
-            return '<span class="udselect">' + title + '<span class="udselect-extension"><span class="fa fa-chevron-down"></span></span></span>';
+            return '<span class="udselect"><span class="udselect-text">' + title + '</span><span class="udselect-extension"><span class="fa fa-chevron-down"></span></span></span>';
         }
     };
 
@@ -104,8 +105,9 @@
             options = $.extend(defaults, options);
 
             // Select box CSS
-            options.selectCss.width = options.width + ' !important';
-            options.selectCss.height = options.height + ' !important';
+            options.selectCss.width = options.width;
+            options.selectCss.height = options.height;
+
 
             // Span CSS
             options.spanCss.width = options.width;
@@ -130,7 +132,7 @@
                         .after(span)
                         .change(function(){
                             var val = $('option:selected',this).text();
-                            $(this).next().text(val);
+                            $(this).next().find('.udselect-text').text(val);
                         });
                 }
 

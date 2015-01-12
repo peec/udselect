@@ -1,8 +1,16 @@
+body {
+    background: #ccc;
+}
+
 .udselect {
     background: #ffffff;
     border-radius: 4px;
     color: #000000;
     padding-right: 40px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 .udselect span.udselect-extension {
     color: #ffffff;
