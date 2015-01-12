@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<script src="../src/jquery.udselect.js"></script>
+<link rel="stylesheet" type="text/css" href="udselect.css" />
+
+<script type="text/javascript">
+$(function () {
+    $('select.styled').udselect();
+});
+</script>
+
+</head>
+<body>
+
+
+<h2>Non styled:</h2>
+
+<select>
+<option value="1">Car</option>
+<option value="2" selected>Bike</option>
+<option value="3">Boat</option>
+</select>
+
+
+<h2>Styled:</h2>
+
+<div>
+<select class="styled">
+<option value="1">Car</option>
+<option value="2" selected>Bike</option>
+<option value="3">Boat</option>
+</select>
+</div>
+
+</body>
+</html>
