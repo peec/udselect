@@ -114,9 +114,7 @@
             options.spanCss.height = options.height;
             options.spanCss['line-height'] = options.height;
             options.spanCss.overflow =  'hidden';
-            options.spanCss['text-overflow'] = 'ellipsis';
-            options.spanCss['-o-text-overflow'] = 'ellipsis';
-            options.spanCss['-moz-binding'] = "url('assets/xml/ellipsis.xml#ellipsis')";
+            options.spanCss['word-break'] = 'break-all';
 
             return this.each(function () {
 
