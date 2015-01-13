@@ -1,9 +1,10 @@
 body {
-    background: #ccc;
+    background: #fff;
 }
 
 .udselect {
     background: #ffffff;
+    border: 1px solid #ACC0CA;
     border-radius: 4px;
     color: #000000;
     padding-right: 40px;

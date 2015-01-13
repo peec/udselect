@@ -2,61 +2,78 @@
 <html>
 <head>
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 
-<!-- Fontawesome, Needed for icon to show -->
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" />
-
-
-<script src="../src/jquery.udselect.js"></script>
-<link rel="stylesheet" type="text/css" href="udselect.css" />
+    <!-- Fontawesome, Needed for icon to show -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" />
 
 
-
-<script type="text/javascript">
-$(function () {
-    $('select.styled').udselect();
-
-    // Change listener..
-    $('select.styled').change(function () {
-        $('.result').text($(this).val());
-    });
-    $('.result').text($('select.styled').val());
-
-});
-</script>
+    <script src="../src/jquery.udselect.js"></script>
+    <link rel="stylesheet" type="text/css" href="udselect.css" />
 
 </head>
 <body>
 
-<h1>UDSELECT</h1>
+    <h1>UDSELECT</h1>
 
-<p><a href="https://github.com/peec/udselect">Documentation in git repo</a></p>
-
-
-<h2>Non styled:</h2>
-
-<select style="width: 100%;">
-<option value="1">Car</option>
-<option value="2" selected>Bike</option>
-<option value="3">Boat</option>
-</select>
+    <p><a href="https://github.com/peec/udselect">Documentation in git repo</a></p>
 
 
-<h2>Styled:</h2>
+    <h2>Non styled:</h2>
 
-<div>
-<select class="styled">
-<option value="1">Car</option>
-<option value="2" selected>Bike</option>
-<option value="3">Boat</option>
-</select>
-</div>
+    <select style="width: 100%;">
+        <option value="1">Car</option>
+        <option value="2" selected>Bike</option>
+        <option value="3">Boat</option>
+    </select>
 
-<h3>Change listener:</h3>
 
-<div class="result"></div>
+
+    <h2>Styled:</h2>
+
+    <p>Select with fluid width:</p>
+
+    <select class="styled">
+        <option value="1">Car</option>
+        <option value="2" selected>Bike</option>
+        <option value="3">Boat</option>
+    </select>
+
+
+    <p>Select with fixed width:</p>
+
+    <select class="styled-small">
+        <option value="1">Car</option>
+        <option value="2" selected>Bike</option>
+        <option value="3">Boat</option>
+    </select>
+
+    <h3>Change listener:</h3>
+
+    <div class="result"></div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('select.styled').udselect({
+                height: '38px',
+                width: '100%'
+            });
+
+            $('select.styled-small').udselect({
+                height: '30px',
+                width: '100px'
+            });
+
+            // Change listener..
+            $('select.styled').change(function () {
+                $('.result').text($(this).val());
+            });
+            $('.result').text($('select.styled').val());
+
+        });
+    </script>
+
 
 
 

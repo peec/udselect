@@ -7,6 +7,7 @@ Select boxes are hard to style - and it must be done correctly to maintain Unive
 ![Example style](https://github.com/peec/udselect/raw/master/doc/example.png "Example")
 
 
+
 ## Example
 
 See example in the `example` folder.
@@ -14,17 +15,15 @@ See example in the `example` folder.
 Wrap a normal select around a `div` tag.
 
 ```html
-<div>
 <select class="styled">
-<option value="1">Test</option>
+    <option value="1">Test</option>
 </select>
-</div>
 ```
 
 Run the plugin on a selector.
 
 ```javascript
-$('select.styled').udselect();
+$('select.styled').udselect({ /* options */ });
 ```
 
 Style it! This is example of styling:
@@ -57,6 +56,36 @@ Style it! This is example of styling:
     margin-left: -15px;
 }
 ```
+
+## Options
+
+Options are passed to the plugin constructor in a hash. Each key is described below.
+
+
+#### width
+
+Set a width, default is `100%`, can be a fixed width such as `100px`.
+
+
+#### height
+
+Set a height, default is `38px`.
+
+
+#### spanElementCallback
+
+A callback function that should return the span that sits below the invisible `select` tag.
+
+Default includes some extra spans to allow for an arrow on the right side, this can be configured with `spanElementCallback`:
+
+```javascript
+        spanElementCallback: function (title) {
+            return '<span class="udselect"><span class="udselect-text">' + title + '</span><span class="udselect-extension"><span class="fa fa-chevron-down"></span></span></span>';
+        }
+```
+
+- It is important that you include `.udselect-text`, this is where the title is put when a user chosen another option.
+
 
 
 

@@ -116,9 +116,12 @@
             options.spanCss.overflow =  'hidden';
             options.spanCss['word-break'] = 'break-all';
 
+
+
             return this.each(function () {
 
-                $(this).parent().css({position: 'relative'});
+                var $mock = $(this).wrap('<div></div>');
+                $mock.parent().css({position: 'relative'});
 
                 if (!isOpera) {
 
@@ -132,6 +135,7 @@
                             var val = $('option:selected',this).text();
                             $(this).next().find('.udselect-text').text(val);
                         });
+
                 }
 
             });
