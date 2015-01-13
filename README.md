@@ -4,6 +4,8 @@ JQuery plugin to style select boxes. Keeping in mind, universal design.
 Select boxes are hard to style - and it must be done correctly to maintain Universal design principles and UX. This plugin creates an overlay that can be styled just as you want with no limitation. 
 
 
+![Example style](https://github.com/peec/udselect/raw/master/doc/example.png "Example")
+
 
 ## Example
 
