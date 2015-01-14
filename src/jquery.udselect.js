@@ -73,9 +73,8 @@
          * Default <select> CSS.
          */
         selectCss: {
-            'position':'relative',
             'z-index':'10',
-            'line-height':'26px',
+            'position':'relative',
             'opacity':0,
             '-khtml-appearance':'none',
             '-webkit-appearance': 'menulist-button' // http://stackoverflow.com/questions/2547354/how-to-increase-the-height-of-the-select-box
@@ -84,13 +83,14 @@
          * Default <span> CSS.
          */
         spanCss: {
+            'z-index':'1',
             'position':'absolute',
             'bottom':'0',
-            'float':'left',
             'left':'0',
             'text-indent':'10px',
             'cursor':'default',
-            'z-index':'1'
+            'overflow': 'hidden',
+            'word-break': 'break-all'
         },
 
         spanElementCallback: function (title) {
@@ -107,14 +107,13 @@
             // Select box CSS
             options.selectCss.width = options.width;
             options.selectCss.height = options.height;
+            options.selectCss['line-height'] = options.height;
 
 
             // Span CSS
             options.spanCss.width = options.width;
             options.spanCss.height = options.height;
             options.spanCss['line-height'] = options.height;
-            options.spanCss.overflow =  'hidden';
-            options.spanCss['word-break'] = 'break-all';
 
 
 
