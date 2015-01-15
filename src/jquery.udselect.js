@@ -101,7 +101,6 @@
 
     $.fn.extend({
         udselect: function (options) {
-            var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
             options = $.extend(defaults, options);
 
             // Select box CSS
@@ -116,26 +115,23 @@
             options.spanCss['line-height'] = options.height;
 
 
-
             return this.each(function () {
 
+                // Create a div that is wrapped around the select AND span element. The span we create later on.
                 var $mock = $(this).wrap('<div></div>');
                 $mock.parent().css({position: 'relative'});
 
-                if (!isOpera) {
+                var title = $('option:selected',this).text();
 
-                    var title = $('option:selected',this).text();
+                var span = $(options.spanElementCallback(title || "")).css(options.spanCss);
+                $(this)
+                    .css(options.selectCss)
+                    .after(span)
+                    .change(function(){
+                        var val = $('option:selected',this).text();
+                        $(this).next().find('.udselect-text').text(val);
+                    });
 
-                    var span = $(options.spanElementCallback(title || "")).css(options.spanCss);
-                    $(this)
-                        .css(options.selectCss)
-                        .after(span)
-                        .change(function(){
-                            var val = $('option:selected',this).text();
-                            $(this).next().find('.udselect-text').text(val);
-                        });
-
-                }
 
             });
         }
