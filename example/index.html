@@ -30,9 +30,7 @@
 
 
 
-    <h2>Styled:</h2>
-
-    <p>Select with fluid width:</p>
+    <p>Example 1: Select with fluid width:</p>
 
     <select class="styled">
         <option value="1">Car</option>
@@ -41,7 +39,7 @@
     </select>
 
 
-    <p>Select with fixed width:</p>
+    <p>Example 2: Select with fixed width:</p>
 
     <select class="styled-small">
         <option value="1">Car</option>
@@ -49,20 +47,43 @@
         <option value="3">Boat</option>
     </select>
 
+
+    <p>Example 3: Select with custom span:</p>
+
+    <select class="styled-custom">
+        <option value="1">Car</option>
+        <option value="2" selected>Bike</option>
+        <option value="3">Boat</option>
+    </select>
+
+
+
     <h3>Change listener:</h3>
 
     <div class="result"></div>
 
     <script type="text/javascript">
         $(function () {
+
+            // Example #1:
             $('select.styled').udselect({
                 height: '38px',
                 width: '100%'
             });
 
+            // Example #2:
             $('select.styled-small').udselect({
                 height: '30px',
                 width: '100px'
+            });
+
+            // Example #3:
+            $('select.styled-custom').udselect({
+                height: '38px',
+                width: '100%',
+                spanElementCallback: function (title) {
+                    return '<span class="custom-select"><span class="udselect-text">' + title + '</span></span>';
+                }
             });
 
             // Change listener..

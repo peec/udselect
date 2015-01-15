@@ -30,3 +30,8 @@ body {
 .udselect span.udselect-extension .fa {
     margin-left: -15px;
 }
+
+
+.custom-select {
+    background: #ff643d;
+}

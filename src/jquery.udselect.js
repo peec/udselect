@@ -2,6 +2,7 @@
  * jQuery Plugin.
  *
  * Select boxes are sometimes hard to style. This plugin makes this easy.
+ * Progressive enhancement.
  *
  * ## Usage:
  *
@@ -55,6 +56,8 @@
  *
  *
  * @author Petter Kjelkenes
+ * @license MIT
+ *
  */
 (function($) {
 
@@ -118,11 +121,14 @@
             return this.each(function () {
 
                 // Create a div that is wrapped around the select AND span element. The span we create later on.
+                // This div will be positioned to RELATIVE.
                 var $mock = $(this).wrap('<div></div>');
                 $mock.parent().css({position: 'relative'});
 
+                // Get the selected option.
                 var title = $('option:selected',this).text();
 
+                // Create the span element and add it to the DOM after the SELECT element.
                 var span = $(options.spanElementCallback(title || "")).css(options.spanCss);
                 $(this)
                     .css(options.selectCss)
@@ -131,6 +137,7 @@
                         var val = $('option:selected',this).text();
                         $(this).next().find('.udselect-text').text(val);
                     });
+
 
 
             });
